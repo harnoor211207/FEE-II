@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             background-color: beige;
+             margin: 0;
+             padding: 0;
+        }
+        #todo{
+            max-width: 500px;
+            margin: 80px auto;
+            background: rgb(185, 236, 240);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px black;
+        }
+        #todo input {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+        #todo button {
+            padding: 10px 15px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: rgb(194, 235, 123);
+            border: 1px solid black;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-top: 12px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .heading{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:20px;
+    color:#2c3e50;
+}
+    </style>
+</head>
+<body>
+    <div id="todo">
+        <h2 class="heading">📝 My To-Do List</h2>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
