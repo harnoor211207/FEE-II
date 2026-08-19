@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#171717;
+    background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size:40px 40px;
+}
+
+.meme-card{
+    width:460px;
+    background:#222;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 0 20px rgba(0,0,0,.6);
+    text-align:center;
+}
+
+.heading{
+    background:white;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:25px;
+}
+
+.heading h1{
+    font-size:40px;
+    color:black;
+    margin-bottom:10px;
+}
+
+.heading p{
+    font-size:42px;
+}
+.text{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+    line-height:42px;
+    margin-bottom:25px;
+    text-shadow:2px 2px 6px black;
+}
+video{
+    width:100%;
+    border-radius:8px;
+    border:3px solid #4f7cff;
+    display:block;
+}
