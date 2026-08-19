@@ -139,6 +139,35 @@ body {
     margin-bottom: 20px;
     display: block;
 }
+
+.cart-display {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    z-index: 1000;
+}
+
+.cart-display span {
+    background: #2563eb;
+    color: white;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+}
+
 /* Tablet */
 
 @media (max-width: 900px) {

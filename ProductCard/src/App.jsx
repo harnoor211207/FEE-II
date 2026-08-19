@@ -4,9 +4,13 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Card from './Card'
-
+import {ShoppingCart} from "lucide-react";
 function App() {
   const [count, setCount] = useState(0)
+  const [cartCount, setCartCount] = useState(0)
+  const addToCart = () => {
+    setCartCount(cartCount + 1)
+  }
   const products = [
   {
     name: "Gaming Mouse",
@@ -132,6 +136,11 @@ function App() {
 ];
   return (
     <div className="app">
+      
+      <div className="cart-display">
+    <ShoppingCart strokeWidth={3} />
+    <span>{cartCount}</span>
+</div>
 
         <h1 className="page-title">TECH-MART</h1>
 
@@ -147,6 +156,7 @@ function App() {
                         available={product.available}
                         buy={product.buyNow}
                         image={product.image}
+                        onAddToCart={addToCart}
                     />
                 )
             })}

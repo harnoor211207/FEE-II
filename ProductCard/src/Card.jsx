@@ -26,14 +26,17 @@ function Card(props) {
                 <div className="buttons">
 
                 {props.available && (
-                    <button className="buy-btn">
-                        {props.buy}
-                    </button>
-                )}
-
+                <button
+                className="buy-btn"
+                onClick={props.onAddToCart}
+                >
+            {props.buy}
+            </button>
+)}
                 <button
                     className="cart-btn"
                     disabled={!props.available}
+                    onClick={props.onAddToCart}
                 >
                     {props.available ? "Add to Cart" : "Out of Stock"}
                 </button>
