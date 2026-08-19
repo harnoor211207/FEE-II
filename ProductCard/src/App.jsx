@@ -9,28 +9,12 @@ function App() {
   const [count, setCount] = useState(0)
   const products = [
   {
-    name: "Wireless Mouse",
-    description: "Ergonomic design with 2.4GHz connectivity",
-    price: "$15",
+    name: "Gaming Mouse",
+    description: "High precision mouse with adjustable DPI",
+    price: "$35",
     available: true,
-    buyNow: "Buy Now at $15",
-    image: "/images/mouse.jpg"
-  },
-  {
-    name: "Mechanical Keyboard",
-    description: "RGB backlit, blue switches",
-    price: "$45",
-    available: true,
-    buyNow: "Buy Now at $45",
-    image: "/images/keyboard.jpg"
-  },
-  {
-    name: "Gaming Headset",
-    description: "Surround sound with noise-canceling mic",
-    price: "$60",
-    available: false,
-    buyNow: "Buy Now at $60",
-    image: "/images/headset.jpg"
+    buyNow: "Buy Now at $35",
+    image: "/images/gaming-mouse.jpg"
   },
   {
     name: "Smartwatch",
@@ -41,12 +25,36 @@ function App() {
     image: "/images/smartwatch.jpg"
   },
   {
-    name: "Portable SSD",
-    description: "1TB storage, USB-C interface",
-    price: "$99",
+    name: "USB-C Hub",
+    description: "5-in-1 hub with HDMI and SD card reader",
+    price: "$40",
     available: true,
-    buyNow: "Buy Now at $99",
-    image: "/images/ssd.jpg"
+    buyNow: "Buy Now at $40",
+    image: "/images/usb-hub.jpg"
+  },
+  {
+    name: "Wireless Charger",
+    description: "Fast charging pad for compatible devices",
+    price: "$30",
+    available: true,
+    buyNow: "Buy Now at $30",
+    image: "/images/charger.jpg"
+  },
+  {
+    name: "Mechanical Keyboard",
+    description: "RGB backlit, blue switches",
+    price: "$45",
+    available: true,
+    buyNow: "Buy Now at $45",
+    image: "/images/keyboard.jpg"
+  },
+  {
+    name: "Power Bank",
+    description: "20000mAh portable power bank with fast charging",
+    price: "$40",
+    available: false,
+    buyNow: "Buy Now at $40",
+    image: "/images/power-bank.jpg"
   },
   {
     name: "Bluetooth Speaker",
@@ -57,12 +65,36 @@ function App() {
     image: "/images/speaker.jpg"
   },
   {
-    name: "Smartphone Stand",
-    description: "Adjustable aluminum desk holder",
-    price: "$10",
+    name: "Laptop Stand",
+    description: "Adjustable aluminum stand for laptops",
+    price: "$45",
     available: true,
-    buyNow: "Buy Now at $10",
-    image: "/images/phone-stand.jpg"
+    buyNow: "Buy Now at $45",
+    image: "/images/laptop-stand.jpg"
+  },
+  {
+    name: "Gaming Headset",
+    description: "Surround sound with noise-canceling mic",
+    price: "$60",
+    available: false,
+    buyNow: "Buy Now at $60",
+    image: "/images/headset.jpg"
+  },
+  {
+    name: "Wireless Mouse",
+    description: "Ergonomic design with 2.4GHz connectivity",
+    price: "$15",
+    available: true,
+    buyNow: "Buy Now at $15",
+    image: "/images/mouse.jpg"
+  },
+  {
+    name: "Webcam",
+    description: "1080p HD webcam with built-in microphone",
+    price: "$50",
+    available: true,
+    buyNow: "Buy Now at $50",
+    image: "/images/webcam.jpg"
   },
   {
     name: "LED Desk Lamp",
@@ -73,14 +105,6 @@ function App() {
     image: "/images/desk-lamp.jpg"
   },
   {
-    name: "USB-C Hub",
-    description: "5-in-1 hub with HDMI and SD card reader",
-    price: "$40",
-    available: true,
-    buyNow: "Buy Now at $40",
-    image: "/images/usb-hub.jpg"
-  },
-  {
     name: "Noise Cancelling Earbuds",
     description: "Wireless earbuds with charging case",
     price: "$75",
@@ -89,45 +113,21 @@ function App() {
     image: "/images/earbuds.jpg"
   },
   {
-    name: "Wireless Charger",
-    description: "Fast charging pad for compatible devices",
-    price: "$30",
+    name: "Smartphone Stand",
+    description: "Adjustable aluminum desk holder",
+    price: "$10",
     available: true,
-    buyNow: "Buy Now at $30",
-    image: "/images/charger.jpg"
-},
-{
-    name: "Webcam",
-    description: "1080p HD webcam with built-in microphone",
-    price: "$50",
+    buyNow: "Buy Now at $10",
+    image: "/images/phone-stand.jpg"
+  },
+  {
+    name: "Portable SSD",
+    description: "1TB storage, USB-C interface",
+    price: "$99",
     available: true,
-    buyNow: "Buy Now at $50",
-    image: "/images/webcam.jpg"
-},
-{
-    name: "Power Bank",
-    description: "20000mAh portable power bank with fast charging",
-    price: "$40",
-    available: false,
-    buyNow: "Buy Now at $40",
-    image: "/images/power-bank.jpg"
-},
-{
-    name: "Gaming Mouse",
-    description: "High precision mouse with adjustable DPI",
-    price: "$35",
-    available: true,
-    buyNow: "Buy Now at $35",
-    image: "/images/gaming-mouse.jpg"
-},
-{
-    name: "Laptop Stand",
-    description: "Adjustable aluminum stand for laptops",
-    price: "$45",
-    available: true,
-    buyNow: "Buy Now at $45",
-    image: "/images/laptop-stand.jpg"
-}
+    buyNow: "Buy Now at $99",
+    image: "/images/ssd.jpg"
+  }
   
 ];
   return (
