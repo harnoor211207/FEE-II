@@ -5,13 +5,37 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Card from './Card'
 import {ShoppingCart} from "lucide-react";
+
 function App() {
-  const [count, setCount] = useState(0)
-  const [cartCount, setCartCount] = useState(0)
-  const addToCart = () => {
-    setCartCount(cartCount + 1)
-  }
-  const products = [
+  const [cart, setCart] = useState({})
+  const addToCart = (name) => {
+    setCart({
+        ...cart,
+        [name]: (cart[name] || 0) + 1
+    })
+}
+
+const increaseQuantity = (name) => {
+    setCart({
+        ...cart,
+        [name]: cart[name] + 1
+    })
+}
+
+const decreaseQuantity = (name) => {
+    const newCart = { ...cart }
+    if (newCart[name] > 1) {
+        newCart[name] = newCart[name] - 1
+    } else {
+        delete newCart[name]
+    }
+    setCart(newCart)
+}
+const cartCount = Object.values(cart).reduce((total, quantity) => {
+    return total + quantity
+}, 0)
+
+const products = [
   {
     name: "Gaming Mouse",
     description: "High precision mouse with adjustable DPI",
@@ -156,7 +180,10 @@ function App() {
                         available={product.available}
                         buy={product.buyNow}
                         image={product.image}
-                        onAddToCart={addToCart}
+                        quantity={cart[product.name] || 0}
+                        onAddToCart={() => addToCart(product.name)}
+                        onIncrease={() => increaseQuantity(product.name)}
+                        onDecrease={() => decreaseQuantity(product.name)}
                     />
                 )
             })}

@@ -33,13 +33,38 @@ function Card(props) {
             {props.buy}
             </button>
 )}
-                <button
-                    className="cart-btn"
-                    disabled={!props.available}
-                    onClick={props.onAddToCart}
-                >
-                    {props.available ? "Add to Cart" : "Out of Stock"}
-                </button>
+                {!props.available ? (
+
+    <button className="cart-btn" disabled>
+        Out of Stock
+    </button>
+
+) : props.quantity === 0 ? (
+
+    <button
+        className="cart-btn"
+        onClick={props.onAddToCart}
+    >
+        Add to Cart
+    </button>
+
+) : (
+
+    <div className="quantity-control">
+
+        <button onClick={props.onDecrease}>
+            −
+        </button>
+
+        <span>{props.quantity}</span>
+
+        <button onClick={props.onIncrease}>
+            +
+        </button>
+
+    </div>
+
+)}
             </div>
             </div>
         </div>
