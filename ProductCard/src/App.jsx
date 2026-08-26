@@ -9,6 +9,7 @@ import {ShoppingCart,Sun,Moon} from "lucide-react";
 function App() {
   const [cart, setCart] = useState({})
   const [darkMode, setDarkMode] = useState(false)
+  const [filter, setFilter] = useState("all")
   const addToCart = (name) => {
     setCart({
         ...cart,
@@ -159,6 +160,29 @@ const products = [
   }
   
 ];
+
+const filteredProducts = products.filter((product) => {
+    const price = parseInt(product.price.replace("$", ""))
+
+    if (filter === "15") {
+        return price < 15
+    }
+
+    if (filter === "30") {
+        return price < 30
+    }
+
+    if (filter === "50") {
+        return price < 50
+    }
+
+    if (filter === "50plus") {
+        return price >= 50
+    }
+
+    return true
+})
+
   return (
     <div className={darkMode ? "app dark" : "app light"}>
           <div className="top-controls">
@@ -179,9 +203,48 @@ const products = [
 
         <h1 className="page-title">TECH-MART</h1>
 
+        <div className="filter-bar">
+
+    <button
+        className={filter === "all" ? "active" : ""}
+        onClick={() => setFilter("all")}
+    >
+        Show All
+    </button>
+
+    <button
+        className={filter === "15" ? "active" : ""}
+        onClick={() => setFilter("15")}
+    >
+        Under $15
+    </button>
+
+    <button
+        className={filter === "30" ? "active" : ""}
+        onClick={() => setFilter("30")}
+    >
+        Under $30
+    </button>
+
+    <button
+        className={filter === "50" ? "active" : ""}
+        onClick={() => setFilter("50")}
+    >
+        Under $50
+    </button>
+
+    <button
+        className={filter === "50plus" ? "active" : ""}
+        onClick={() => setFilter("50plus")}
+    >
+        $50+
+    </button>
+
+</div>
+
         <div className="product-grid">
 
-            {products.map((product, index) => {
+           {filteredProducts.map((product, index) => {
                 return (
                     <Card
                         key={index}
