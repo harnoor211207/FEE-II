@@ -4,6 +4,43 @@
     padding: 0;
 }
 
+.app {
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app.light {
+    background: #f5f3ee;
+    color: #1f2937;
+}
+
+.app.dark {
+    background: #111827;
+    color: #f9fafb;
+}
+
+.app.light .page-title {
+    color: #1f2937;
+}
+
+.app.dark .page-title {
+    color: #f9fafb;
+}
+
+.app.dark .card {
+    background: #1f2937;
+    border-color: #374151;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.app.dark .card h3 {
+    color: #f9fafb;
+}
+
+.app.dark .description {
+    color: #cbd5e1;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f3ee;
@@ -140,21 +177,86 @@ body {
     display: block;
 }
 
-.cart-display {
+/* TOP CONTROLS */
+
+.top-controls {
     position: fixed;
-    top: 25px;
-    right: 35px;
+    top: 22px;
+    right: 30px;
+
     display: flex;
     align-items: center;
-    gap: 6px;
-    background: #ffffff;
-    padding: 10px 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-size: 24px;
+    gap: 10px;
+
     z-index: 1000;
 }
 
+
+/* DARK / LIGHT BUTTON */
+
+.theme-toggle {
+    height: 42px;
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #1f2937;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+
+/* CART */
+
+.cart-display {
+    height: 42px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    background: #ffffff;
+    color: #1f2937;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    font-size: 22px;
+}
+
+.cart-display span {
+    background: #2563eb;
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
 .cart-display span {
     background: #2563eb;
     color: white;
@@ -189,14 +291,20 @@ body {
     cursor: pointer;
 }
 
+.app.dark .quantity-control {
+    background: #374151;
+}
+
+.app.dark .quantity-control span {
+    color: #f9fafb;
+}
+
 .quantity-control span {
     width: 28px;
     text-align: center;
     font-size: 14px;
     font-weight: 600;
 }
-
-/* Tablet */
 
 @media (max-width: 900px) {
     .product-grid {

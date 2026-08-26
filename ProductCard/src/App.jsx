@@ -4,10 +4,11 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Card from './Card'
-import {ShoppingCart} from "lucide-react";
+import {ShoppingCart,Sun,Moon} from "lucide-react";
 
 function App() {
   const [cart, setCart] = useState({})
+  const [darkMode, setDarkMode] = useState(false)
   const addToCart = (name) => {
     setCart({
         ...cart,
@@ -159,12 +160,22 @@ const products = [
   
 ];
   return (
-    <div className="app">
-      
-      <div className="cart-display">
-    <ShoppingCart strokeWidth={3} />
-    <span>{cartCount}</span>
+    <div className={darkMode ? "app dark" : "app light"}>
+          <div className="top-controls">
+    <button
+        className="theme-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+    >
+        {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+        <span>{darkMode ? "Light" : "Dark"}</span>
+    </button>
+    <div className="cart-display">
+        <ShoppingCart strokeWidth={3} />
+        <span>{cartCount}</span>
+    </div>
 </div>
+    
+
 
         <h1 className="page-title">TECH-MART</h1>
 
