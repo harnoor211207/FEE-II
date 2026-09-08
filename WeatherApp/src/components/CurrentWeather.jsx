@@ -1,10 +1,10 @@
-function CurrentWeather({ weather }) {
+function CurrentWeather({ weather, city }) {
   const current = weather.current;
 
   return (
     <section className="current-weather">
       <div className="location">
-        <h2>{weather.location.name}</h2>
+        <h2>{city}</h2>
         <p>{weather.location.country}</p>
       </div>
 
